@@ -25,6 +25,4 @@ jobs:
       - run: npm run prettier-check
 
       - name: Alex writing check
-        uses: brown-ccv/alex-recommends@v1.2.1
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run alex
