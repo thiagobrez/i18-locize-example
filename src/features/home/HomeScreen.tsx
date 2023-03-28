@@ -12,6 +12,7 @@ function HomeScreen() {
   return (
     <>
       <Text>{t('Welcome to React')}</Text>
+      <Text>boogeyman</Text>
       <Button onPress={toggleLanguage} title={t('Toggle language')} />
     </>
   );

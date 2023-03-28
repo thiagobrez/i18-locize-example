@@ -1,0 +1,33 @@
+name: alex
+
+on:
+  push:
+    branches-ignore:
+      - 'main'
+
+jobs:
+  check-writing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 19
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - run: npm run lint
+
+      - run: npm run prettier-check
+
+      - run: npm run test
+
+      - name: Alex writing check
+        uses: brown-ccv/alex-recommends@v1.2.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
