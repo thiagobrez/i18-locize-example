@@ -7,6 +7,6 @@ import App from './App';
 import {name as appName} from './app.json';
 
 import 'intl-pluralrules';
-import './src/i18n/i18n';
+import './i18n';
 
 AppRegistry.registerComponent(appName, () => App);

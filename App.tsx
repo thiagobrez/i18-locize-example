@@ -1,18 +1,21 @@
-import React from 'react';
-import {useTranslation} from 'react-i18next';
-import {Button, SafeAreaView, StyleSheet, Text} from 'react-native';
+import React, {Suspense} from 'react';
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
+import HomeScreen from './src/features/home/HomeScreen';
+
+function Loader() {
+  return (
+    <View>
+      <Text>Loading...</Text>
+    </View>
+  );
+}
 
 function App(): JSX.Element {
-  const {t, i18n} = useTranslation();
-
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'es' : 'en');
-  };
-
   return (
     <SafeAreaView style={styles.container}>
-      <Text>{t('Welcome to React')}</Text>
-      <Button onPress={toggleLanguage} title={t('Toggle language')} />
+      <Suspense fallback={<Loader />}>
+        <HomeScreen />
+      </Suspense>
     </SafeAreaView>
   );
 }
