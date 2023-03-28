@@ -2,7 +2,7 @@ import i18n, {ModuleType} from 'i18next';
 import {initReactI18next} from 'react-i18next';
 import Backend from 'i18next-locize-backend';
 import * as RNLocalize from 'react-native-localize';
-import {LOCIZE_PROJECT_ID, LOCIZE_API_KEY} from '@env';
+import {LOCIZE_PROJECT_ID, LOCIZE_API_KEY} from 'react-native-dotenv';
 
 const languageDetector = {
   type: 'languageDetector' as ModuleType,
