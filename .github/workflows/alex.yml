@@ -25,8 +25,6 @@ jobs:
 
       - run: npm run prettier-check
 
-      - run: npm run test
-
       - name: Alex writing check
         uses: brown-ccv/alex-recommends@v1.2.1
         with:
